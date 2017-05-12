@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Bond Street Apartments</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link href="css/custom.css" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+
+</head>
+<body>
+  <div id="page" data-role="page" data-theme="a" data-add-back-btn="true">
+    <div data-role="panel" id="menuPanel" data-theme="a">
+      <div data-role="header" data-theme="a">
+        <h1>Main Menu</h1>
+      </div>
+      <p>&nbsp;</p>
+      <ul data-role="listview" data-theme="b">
+        <li><a href="#available-apt">Available Apartments</a></li>
+        <li><a href="#sign-in">Sign In</a></li>
+        <li><a href="#favoriteList">My Favorites</a></li>
+      </ul>
+      <p>&nbsp;</p>
+      <div class="ui-content">
+        <a data-role="button" data-rel="close">Close</a> 
+      </div>
+    </div>
+    <div data-role="header" data-theme="a">
+      <h1>
+        <img src="images/logo.png" height="85" alt=""/>
+      </h1>
+    </div>
+    <div data-role="header">
+      <a href="#menuPanel" data-role="button" data-icon="grid">Main Menu</a>
+      <h1>Welcome!</h1>
+    </div>
+
+    <div data-role="content">
+      <p>
+      Welcome to Bond Street Apartments.  We can help you find your next home!
+      </p>
+      <div class="ui-grid-b ui-responsive">
+        <div class="ui-block-a">
+          <img src="images/apartment-stock-image-01.jpg" class="img-responsive" />
+        </div>
+        <div class="ui-block-b">
+          <p>Check out the <a href="#available-apt">Available Apartments</a> page for more information about our current listings.</p>
+        </div>
+        <div class="ui-block-c">
+          <img src="images/apt-search-01.jpg" class="img-responsive" />
+        </div>
+      </div>
+
+      <div id="user-info">
+      </div>
+    </div>
+    <div data-role="footer" data-theme="a">
+      <h4>Bond Street &copy; 2017</h4>
+    </div>
+  </div>
+
+  <div data-role="page" id="available-apt" data-theme="a" data-add-back-btn="true">
+    <div data-role="header" data-theme="a" data-add-back-btn="true">
+      <h1>Available Aparmtents</h1>
+    </div>
+    <div data-role="content">
+      <ul data-role="listview" data-theme="c" data-filter="true" id="apartmentList">
+        <li><span class="ui-icon-info ui-btn-icon-left "></span>$1,200 1 Bedroom 1 Bathroom</li>
+        <li><span class="ui-icon-info ui-btn-icon-left "></span>$3,200 2 Bedroom 1 Bathroom</li>
+        <li><span class="ui-icon-info ui-btn-icon-left "></span>$4,100 3 Bedroom 2 Bathroom</li>
+        <li><span class="ui-icon-info ui-btn-icon-left "></span>$2,100 1 Bedroom 1 Bathroom</li>
+        <li><span class="ui-icon-info ui-btn-icon-left "></span>$1,700 2 Bedroom 1 Bathroom</li>
+      </ul>
+    </div>
+    <div data-role="footer" data-theme="a">
+      <h4>Bond Street &copy; 2017</h4>
+    </div>
+  </div>
+
+  <div data-role="page" id="sign-in" data-theme="a" data-add-back-btn="true">
+    <div data-role="header" data-theme="a" data-add-back-btn="true">
+      <h1>Sign In</h1>
+    </div>
+    <div data-role="content">    
+      <p>Use the below form to sign in.  This information is stored on your machine for a better experience when you visit again.</p>
+      <form id="sign-in-form">
+        <label for="sign-in-fname">First Name</label>
+        <input type="text" name="sign-in-fname" id="sign-in-fname" data-clear-btn="true" />
+
+        <label for="sign-in-lname">Last Name</label>
+        <input type="text" name="sign-in-lname" id="sign-in-lname" data-clear-btn="true" />
+
+        <label for="sign-in-email">Email Address</label>
+        <input type="email" name="sign-in-email" id="sign-in-email" data-clear-btn="true" />
+
+        <label for="sign-in-age">Age</label>
+        <input type="number" name="sign-in-age" id="sign-in-age" data-clear-btn="true" />
+
+        <input type="reset" value="Reset Form" />
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+    <div data-role="footer" data-theme="a">
+      <h4>Bond Street &copy; 2017</h4>
+    </div>
+  </div>
+
+  <!-- FAVORITES_LIST -->
+  <div data-role="page" id="favoriteList" data-theme="a" data-add-back-btn="true">
+    <div data-role="header" data-theme="a" data-add-back-btn="true">
+      <h1>My Favorites</h1>
+    </div>
+    <div data-role="content">    
+      <p>
+      Use this list to keep track of your favorite apartment features.  
+      For example, you could enter 'high ceilings'.  
+      Use this list as your reference while your visiting one of our listed apartments.
+      </p>
+      <form id="favForm">
+        <label for="fav-item"></label>
+        <input type="text" name="fav-item" id="fav-item" placeholder="walk-in closets" data-clear-btn="true" />
+        <input type="submit" value="Add Item" />
+      </form>
+      <p>My List Items<br><em>Click the "X" button to the right of an item to remove it.</p>
+      <p>&nbsp;<br></p>
+      <ul data-role="listview" id="favList" data-split-icon="delete">
+      </ul>
+    </div>
+    <div data-role="footer" data-theme="a">
+      <h4>Bond Street &copy; 2017</h4>
+    </div>
+  </div>
+
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <script src="script/app.js"></script>
+</body>
+</html>
